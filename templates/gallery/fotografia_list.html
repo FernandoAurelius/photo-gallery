@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="gallery min-vh-100">
+    <div class="container-lg">
+        <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
+            {% if fotografia_list %}
+            {% for fotografia in fotografia_list %}
+            <div class="col">
+                {% if fotografia.foto %}
+                    <img src="{{ fotografia.foto.url }}" class="gallery-item" data-id="{{ fotografia.id }}" alt="gallery">
+                {% else %}
+                    <p>Imagem não disponível</p>
+                {% endif %}
+            </div>
+            {% endfor %}            
+            {% else %}
+                <p>Fotografias não encontradas</p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

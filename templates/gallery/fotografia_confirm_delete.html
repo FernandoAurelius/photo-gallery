@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <section class="container-fluid">
+        <h1>Excluir foto?</h1>
+        <div class="alert alert-warning" role="alert">
+            Confirme a exclusão da foto abaixo
+        </div>
+    </section>
+    <form method="POST" class="container-fluid">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Confirmar</button>
+        <a href="{% url 'photo_list' %}" class="btn btn-primary">Voltar para galeria</a>
+    </form>
+{% endblock content %}
