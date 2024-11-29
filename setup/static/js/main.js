@@ -11,11 +11,25 @@ document.addEventListener("click", function (e) {
                 document.querySelector(".modal-title").textContent = data.nome;
                 document.querySelector(".modal-legenda").textContent = data.legenda;
                 document.querySelector(".modal-descricao").textContent = data.descricao;
+                const src = e.target.getAttribute("src");
+                const pk = e.target.getAttribute("data-pk");  // Captura o atributo data-pk da imagem
 
-                // Exibe o modal
-                const myModal = new bootstrap.Modal(document.getElementById('gallery-modal'));
-                myModal.show();
-            })
-            .catch(error => console.error('Erro ao carregar os dados:', error));
+                // Verifica se o atributo data-pk existe
+                if (pk) {
+                    // Atualiza o src da imagem no modal
+                    document.querySelector(".modal-img").src = src;
+
+                    // Atualiza os links de Atualizar e Deletar com o pk correto
+                    document.querySelector("#photo-update-link").href = `/update/${pk}`;
+                    document.querySelector("#photo-delete-link").href = `/delete/${pk}`;
+
+                    // Exibe o modal
+                    const myModal = new bootstrap.Modal(document.getElementById('gallery-modal'));
+                    myModal.show();
+                } else {
+                    console.error('O atributo data-pk não foi encontrado na imagem.');
+                }
+            }
+        )
     }
 });

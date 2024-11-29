@@ -8,7 +8,7 @@
             {% for fotografia in fotografia_list %}
             <div class="col">
                 {% if fotografia.foto %}
-                    <img src="{{ fotografia.foto.url }}" class="gallery-item" data-id="{{ fotografia.id }}" alt="gallery">
+                    <img src="{{ fotografia.foto.url }}" class="gallery-item" data-id="{{ fotografia.id }}" data-pk="{{ fotografia.pk }}" alt="gallery">
                 {% else %}
                     <p>Imagem não disponível</p>
                 {% endif %}
