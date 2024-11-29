@@ -24,17 +24,17 @@ ALLOWED_HOSTS = [
     "0.0.0.0:8000",
 ]
 
-CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = False
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*",
     "https://*.fly.dev",
     "https://0.0.0.0:8000",
     "http://0.0.0.0:8000",
-    "http://*",
+    "http://34.229.173.142",
 ]
 
-SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = False
 
 SECURE_SSL_REDIRECT = False
 
@@ -141,11 +141,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "setup/static")]
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
