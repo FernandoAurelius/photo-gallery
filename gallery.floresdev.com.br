@@ -1,4 +1,5 @@
 server {
+    client_max_body_size 50M;
     server_name gallery.floresdev.com.br;
 
     # Localizações para arquivos estáticos
@@ -30,6 +31,7 @@ server {
         return 301 https://$host$request_uri;
     }
 
+    client_max_body_size 50M;
     listen 80;
     server_name gallery.floresdev.com.br;
     return 404;
