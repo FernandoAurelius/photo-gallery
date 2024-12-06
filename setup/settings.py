@@ -164,7 +164,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Files limit size
 
 # Tamanho máximo de uploads em memória: 50MB
-DATA_UPLOAD_MAX_MEMORY_SIZE = 50 * 1024 * 1024  # 50 MB em bytes
+DATA_UPLOAD_MAX_MEMORY_SIZE = 1000 * 1024 * 1024  # 50 MB em bytes
 
-FILE_UPLOAD_MAX_MEMORY_SIZE = 50 * 1024 * 1024  # 50 MB em bytes
-
+FILE_UPLOAD_MAX_MEMORY_SIZE = 1000 * 1024 * 1024  # 50 MB em bytes
