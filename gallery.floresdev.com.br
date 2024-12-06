@@ -1,0 +1,36 @@
+server {
+    server_name gallery.floresdev.com.br;
+
+    # Localizações para arquivos estáticos
+    location /static/ {
+        alias /home/ubuntu/photo-gallery/static/;
+    }
+
+    # Localizações para arquivos de mídia
+    location /media/ {
+        alias /home/ubuntu/photo-gallery/media/;
+    }
+
+    # Passagem para o backend Django
+    location / {
+        include proxy_params;
+        proxy_pass http://localhost:8000;
+    }
+
+    # Configurações SSL
+    listen 443 ssl; # Corrigindo o typo "ss1" para "ssl"
+    ssl_certificate /etc/letsencrypt/live/gallery.floresdev.com.br/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/gallery.floresdev.com.br/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+}
+
+server {
+    if ($host = gallery.floresdev.com.br) {
+        return 301 https://$host$request_uri;
+    }
+
+    listen 80;
+    server_name gallery.floresdev.com.br;
+    return 404;
+}

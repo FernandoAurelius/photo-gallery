@@ -24,19 +24,14 @@ ALLOWED_HOSTS = [
     "0.0.0.0:8000",
 ]
 
-CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = True
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://*",
-    "https://*.fly.dev",
     "https://0.0.0.0:8000",
     "http://0.0.0.0:8000",
-    "http://34.229.173.142",
 ]
 
 SESSION_COOKIE_SECURE = False
-
-SECURE_SSL_REDIRECT = False
 
 SECURE_HSTS_SECONDS = 604800
 
