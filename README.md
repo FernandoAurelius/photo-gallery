@@ -1,7 +1,7 @@
-# Django Gallery Project
+# Photo Gallery Project
 
 ## Descrição
-🎨 Este projeto, **Django Gallery**, é um sistema web de galeria de imagens desenvolvido com o framework **Django 5** e estilizado com **Bootstrap 5**. Ele foi criado como parte do **projeto de conclusão da matéria de WebDesign** do quarto semestre do curso técnico em Informática para Internet. O projeto é funcional e foi hospedado na nuvem utilizando serviços como **AWS EC2**, **RDS**, e **Nginx + Gunicorn** para configuração de servidor, além de implementar **certificado SSL** para garantir segurança nas conexões. 🌟✨📷
+🎨 Este projeto, **Photo Gallery**, é um sistema web de galeria de imagens desenvolvido com o framework **Django 5** e estilizado com **Bootstrap 5**. Ele foi criado como parte do **projeto de conclusão da matéria de WebDesign** do quarto semestre do curso técnico em Informática para Internet. O projeto é funcional e foi hospedado na nuvem utilizando serviços como **AWS EC2**, **RDS**, e **Nginx + Gunicorn** para configuração de servidor, além de implementar **certificado SSL** para garantir segurança nas conexões. 🌟✨📷
 
 ## Principais Funcionalidades
 - **Sistema de Galeria** 📸:
@@ -153,7 +153,7 @@ project_root/
 ## Como Rodar o Projeto Localmente
 ⚙️ 1. **Clone o repositório**:
    ```bash
-   git clone https://github.com/usuario/django-gallery.git
+   git clone https://github.com/FernandoAurelius/photo-gallery
    cd django-gallery
    ```
 
