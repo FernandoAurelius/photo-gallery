@@ -27,16 +27,11 @@ ALLOWED_HOSTS = [
 CSRF_COOKIE_SECURE = True
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://*",
-    "https://*.fly.dev",
     "https://0.0.0.0:8000",
     "http://0.0.0.0:8000",
-    "http://*",
 ]
 
-SESSION_COOKIE_SECURE = True
-
-SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
 
 SECURE_HSTS_SECONDS = 604800
 
@@ -141,11 +136,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "setup/static")]
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
@@ -165,3 +160,10 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Files limit size
+
+# Tamanho máximo de uploads em memória: 50MB
+DATA_UPLOAD_MAX_MEMORY_SIZE = 1000 * 1024 * 1024  # 50 MB em bytes
+
+FILE_UPLOAD_MAX_MEMORY_SIZE = 1000 * 1024 * 1024  # 50 MB em bytes
